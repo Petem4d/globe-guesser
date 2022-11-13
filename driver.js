@@ -15,5 +15,17 @@ function addListeners(){
 }
 
 function main(){
+    let won = False;
+    let cnt = 0;
+    createHint();
+ 
+}
 
+function createHint(){
+    
+    
+}
+
+function retrieveInput(){
+    
 }
