@@ -34,4 +34,5 @@ function retrieveInput(){
     } else {
         console.log("incorrect");
     }
+    console.log(guess);
 }
