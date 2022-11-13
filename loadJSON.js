@@ -1,8 +1,10 @@
 import data from './Countries.json' assert { type: 'json' };
-window.addEventListener("load", main); 
+window.addEventListener("load", selectCountry); 
+var country;
 
-function main(){
-    console.log(data);
+function selectCountry(){
+    let countryNum = Math.floor(Math.random() * 227);
+    country = data[countryNum];
 }
 
 
