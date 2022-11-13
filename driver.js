@@ -16,23 +16,24 @@ function addListeners(){
 }
 
 function main(){
+    let won = False;
     let cnt = 0;
-    createHint();
+    createHint(0);
  
 }
 
 function createHint(){
-
+    
     
 }
 
 function retrieveInput(){
-    let guess = document.getElementById("userGuess").value;
-    let correctCountry = country.Country;
-    if (guess == correctCountry) {
-        console.log("correct");
+    let guess = document.getElementById("userGuess").ariaValueMax;
+    let result = country.Country;
+    let output = document.createElement("text");
+    if (guess == result) {
+        output.innerHTML("correct");
     } else {
-        console.log("incorrect");
+        output.innerHTML("inccorect");
     }
-    console.log(guess);
 }
