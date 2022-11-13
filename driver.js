@@ -11,21 +11,27 @@ function setup(){
 }
 
 function addListeners(){
-
+    let btn = document.getElementById("submit");
+    btn.addEventListener("click", retrieveInput);
 }
 
 function main(){
-    let won = False;
     let cnt = 0;
     createHint();
  
 }
 
 function createHint(){
-    
+
     
 }
 
 function retrieveInput(){
-    
+    let guess = document.getElementById("userGuess").value;
+    let correctCountry = country.Country;
+    if (guess == correctCountry) {
+        console.log("correct");
+    } else {
+        console.log("incorrect");
+    }
 }
