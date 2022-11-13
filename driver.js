@@ -11,7 +11,8 @@ function setup(){
 }
 
 function addListeners(){
-
+    let btn = document.getElementById("submit");
+    btn.addEventListener("click", retrieveInput);
 }
 
 function main(){
@@ -50,3 +51,13 @@ function createHint(cnt){
     mainDiv.appendChild(header);
 }
 
+function retrieveInput(){
+    let guess = document.getElementById("userGuess").ariaValueMax;
+    let result = country.Country;
+    let output = document.createElement("text");
+    if (guess == result) {
+        output.innerHTML("correct");
+    } else {
+        output.innerHTML("inccorect");
+    }
+}
