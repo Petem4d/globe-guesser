@@ -50,7 +50,7 @@ function createHint(cnt){
 }
 
 function retrieveInput(){
-    let guess = document.getElementById("userGuess").ariaValueMax;
+    let guess = document.getElementById("userGuess").value;
     let result = country.Country;
     let output = document.createElement("text");
     if (guess == result) {
