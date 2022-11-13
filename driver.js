@@ -1,18 +1,19 @@
+import {selectCountry} from "./loadJSON.js";
+
 window.addEventListener("load", setup); 
 
-
+var country;
 function setup(){
     addListeners();
-    pickCountry();
+    country = selectCountry();
+    console.log(country);
+    main();
 }
 
 function addListeners(){
 
 }
 
-function addHint(){
-
-}
-function pickCountry(){
+function main(){
 
 }
