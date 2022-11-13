@@ -1,7 +1,7 @@
 import {selectCountry} from "./loadJSON.js";
 
 window.addEventListener("load", setup); 
-
+var count = 0;
 var country;
 function setup(){
     addListeners();
@@ -16,10 +16,8 @@ function addListeners(){
 }
 
 function main(){
-    //let won = False;
-    let cnt = 0;
     createHint(0);
- 
+    
 }
 
 function createHint(cnt){
@@ -56,8 +54,13 @@ function retrieveInput(){
     let result = country.Country;
     let output = document.createElement("text");
     if (guess == result) {
-        output.innerHTML("correct");
+        playAgain();
     } else {
-        output.innerHTML("inccorect");
+        count ++;
+        createHint(count);
     }
+}
+
+function playAgain(){
+    
 }
