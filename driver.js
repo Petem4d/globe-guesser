@@ -6,61 +6,96 @@ var country;
 function setup(){
     addListeners();
     country = selectCountry();
-    console.log(country);
     main();
 }
 
 function addListeners(){
     let btn = document.getElementById("submit");
-    btn.addEventListener("click", retrieveInput);
+    //btn.addEventListener("click", retrieveInput);
+    
+    
+    document.getElementById("regionButt").addEventListener("click", reg )
+    document.getElementById("popButt").addEventListener("click", pop )
+    document.getElementById("exportButt").addEventListener("click", exp )
+    document.getElementById("originButt").addEventListener("click", orig )
+    document.getElementById("foodButt").addEventListener("click", food)
+    document.getElementById("languageButt").addEventListener("click", lang )
+    document.getElementById("capitalButt").addEventListener("click", cap )
+    document.getElementById("currButt").addEventListener("click", curr)
+    document.getElementById("lmarkButt").addEventListener("click", mark )
+   
+
 }
 
 function main(){
-    createHint(0);
     
 }
 
 function createHint(cnt){
-    let mainDiv = document.getElementById("Wrapper"); 
-    //let newDiv = document.createElement("div");
-    let header = document.createElement("h3");
     var clue;
     switch (cnt) {
         case 0:
             clue = "This country is in " + country.Region;
+            console.log("Is it me?");
+            document.getElementById("regionButt").disabled = true;
             break;
         case 1:
             clue = "This country has a population of " + country.Population + " people";
+            document.getElementById("popButt").disabled = true;
             break;
         case 2:
-            clue = "This country has an area of " + country["Area (sq. mi.)"] + " square miles";
+            clue = "This country's top export is ";
+            document.getElementById("exportButt").disabled = true;
             break;
         case 3:
-            clue = "This country has a population density of " + country["Pop. Density (per sq. mi.)"] + " people per square miles";
+            clue = "This country's independence/origin date is ";
+            document.getElementById("originButt").disabled = true;
             break;
         case 4:
-            clue = "This country has " + country["Coastline (coast/area ratio)"] + " miles of coastline";
+            clue = "This country's national dish is ";
+            document.getElementById("foodButt").disabled = true;
             break;
         case 5:
-            clue = "This country has a GDP of $" + country["GDP ($ per capita)"] + " per capita";
+            clue = "The official language of this country is ";
+            document.getElementById("languageButt").disabled = true;
+            break;
+        case 6:
+            clue = "The capital of this country is  ";
+            document.getElementById("capitalButt").disabled = true;
+            break;        
+        case 7:
+            clue = "The currency of this country is ";
+            document.getElementById("currButt").disabled = true;
+            break;       
+        case 8:
+            clue = "One of the most well known landmarks in this country is ";
+            document.getElementById("lmarkButt").disabled = true;
             break;
     }
-    header.innerHTML = clue;
-    mainDiv.appendChild(header);
 }
 
-function retrieveInput(){
-    let guess = document.getElementById("userGuess").ariaValueMax;
-    let result = country.Country;
-    let output = document.createElement("text");
-    if (guess == result) {
-        playAgain();
-    } else {
-        count ++;
-        createHint(count);
-    }
-}
+// function retrieveInput(){
+//     let guess = document.getElementById("userGuess").ariaValueMax;
+//     let result = country.Country;
+//     let output = document.createElement("text");
+//     if (guess == result) {
+//         playAgain();
+//     } else {
+//         count ++;
+//         createHint(count);
+//     }
+// }
 
 function playAgain(){
     
 }
+
+function reg(){createHint(0)};
+function pop(){createHint(1)};
+function exp(){createHint(2)};
+function orig(){createHint(3)};
+function food(){createHint(4)};
+function lang(){createHint(5)};
+function cap(){createHint(6)};
+function curr(){createHint(7)};
+function mark(){createHint(8)};
