@@ -4,6 +4,7 @@ window.addEventListener("load", setup);
 var count = 0;
 var country;
 function setup(){
+    openIntroModal();
     addListeners();
     country = selectCountry();
     console.log(country);
@@ -54,13 +55,30 @@ function retrieveInput(){
     let result = country.Country;
     let output = document.createElement("text");
     if (guess == result) {
+        openModalWin();
         playAgain();
     } else {
         count ++;
         createHint(count);
     }
 }
+function openModalWin(){
+    var myModal = new bootstrap.Modal(document.getElementById("winModal"));
+    let score = document.getElementById("addScore");
+    score.innerHTML = "70";
+    myModal.show();
+    var playAgainBtn = document.getElementById("playAgain");
+    playAgain.addEventListener("click", playAgain);
+}
 
+function openModalLose(){
+
+}
+
+function openIntroModal() {
+    var myModal = new bootstrap.Modal(document.getElementById("introModal"));
+    myModal.show();
+}
 function playAgain(){
     
 }
