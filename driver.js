@@ -56,7 +56,6 @@ function retrieveInput(){
     let output = document.createElement("text");
     if (guess == result) {
         openModalWin();
-        playAgain();
     } else {
         count ++;
         createHint(count);
@@ -64,11 +63,15 @@ function retrieveInput(){
 }
 function openModalWin(){
     var myModal = new bootstrap.Modal(document.getElementById("winModal"));
+    let guess = document.getElementById("userGuess").value;
     let score = document.getElementById("addScore");
-    score.innerHTML = "70";
+    let country = document.getElementById("correctCountry");
+    var correctCountry = toString(country.Country);
+    country.innerHTML = "Correct Country: " + guess;
+    score.innerHTML = calculateScore();
     myModal.show();
-    var playAgainBtn = document.getElementById("playAgain");
-    playAgain.addEventListener("click", playAgain);
+    let playAgainBtn = document.getElementById("playAgain");
+    playAgainBtn.addEventListener("click", playAgain);
 }
 
 function openModalLose(){
@@ -80,5 +83,9 @@ function openIntroModal() {
     myModal.show();
 }
 function playAgain(){
-    
+    console.log("play again");
+}
+
+function calculateScore() {
+    return count;
 }
