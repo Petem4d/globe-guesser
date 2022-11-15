@@ -7,12 +7,13 @@ function setup(){
     openIntroModal();
     addListeners();
     country = selectCountry();
+    console.log(country);
     main();
 }
 
 function addListeners(){
     let btn = document.getElementById("submit");
-    //btn.addEventListener("click", retrieveInput);
+    btn.addEventListener("click", retrieveInput);
     
     
     document.getElementById("regionButt").addEventListener("click", reg )
@@ -78,7 +79,6 @@ function createHint(cnt){
 function retrieveInput(){
     let guess = document.getElementById("userGuess").value;
     let result = country.Country;
-    let output = document.createElement("text");
     if (guess == result) {
         openModalWin();
     } else {
