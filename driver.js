@@ -4,29 +4,25 @@ window.addEventListener("load", setup);
 var count = 0;
 var country;
 function setup(){
+    country = selectCountry();
     openIntroModal();
     addListeners();
-    country = selectCountry();
-    console.log(country);
     main();
 }
 
 function addListeners(){
-    let btn = document.getElementById("submit");
-    btn.addEventListener("click", retrieveInput);
-    
-    
+    //let btn = document.getElementById("submit");
+    //btn.addEventListener("click", retrieveInput);
+    console.log(country);
     document.getElementById("regionButt").addEventListener("click", reg )
     document.getElementById("popButt").addEventListener("click", pop )
-    document.getElementById("exportButt").addEventListener("click", exp )
-    document.getElementById("originButt").addEventListener("click", orig )
+    document.getElementById("currButt").addEventListener("click", curr)
     document.getElementById("foodButt").addEventListener("click", food)
+    document.getElementById("funButt").addEventListener("click", fun)
     document.getElementById("languageButt").addEventListener("click", lang )
     document.getElementById("capitalButt").addEventListener("click", cap )
-    document.getElementById("currButt").addEventListener("click", curr)
+    document.getElementById("fameButt").addEventListener("click", fame)
     document.getElementById("lmarkButt").addEventListener("click", mark )
-   
-
 }
 
 function main(){
@@ -38,47 +34,48 @@ function createHint(cnt){
     switch (cnt) {
         case 0:
             clue = "This country is in " + country.Region;
-            console.log("Is it me?");
             document.getElementById("regionButt").disabled = true;
             break;
         case 1:
-            clue = "This country has a population of " + country.Population + " people";
+            clue = "This country has a population of "+ country.Population + " people";
             document.getElementById("popButt").disabled = true;
             break;
         case 2:
-            clue = "This country's top export is ";
-            document.getElementById("exportButt").disabled = true;
-            break;
+            clue = "The currency of this country is the " + country.Currency;
+            document.getElementById("currButt").disabled = true;
+            break;  
         case 3:
-            clue = "This country's independence/origin date is ";
-            document.getElementById("originButt").disabled = true;
-            break;
-        case 4:
-            clue = "This country's national dish is ";
+            clue = "This country's national dish is " + country.Food;
             document.getElementById("foodButt").disabled = true;
             break;
+        case 4:
+            clue = country.Fun;
+            document.getElementById("funButt").disabled = true;
+            break;
         case 5:
-            clue = "The official language of this country is ";
+            clue = "The official language of this country is " + country.Language;
             document.getElementById("languageButt").disabled = true;
             break;
         case 6:
-            clue = "The capital of this country is  ";
+            clue = "The capital of this country is  " + country.Capital;
             document.getElementById("capitalButt").disabled = true;
             break;        
         case 7:
-            clue = "The currency of this country is ";
-            document.getElementById("currButt").disabled = true;
+            clue = "A famous person from this country is " + country.Famous;
+            document.getElementById("fameButt").disabled = true;
             break;       
         case 8:
-            clue = "One of the most well known landmarks in this country is ";
+            clue = "One of the most well known landmarks in this country is " + country.Landmark;
             document.getElementById("lmarkButt").disabled = true;
             break;
     }
+    console.log(clue);
 }
 
 function retrieveInput(){
     let guess = document.getElementById("userGuess").value;
     let result = country.Country;
+    let output = document.createElement("text");
     if (guess == result) {
         openModalWin();
     } else {
@@ -117,10 +114,10 @@ function calculateScore() {
 
 function reg(){createHint(0)};
 function pop(){createHint(1)};
-function exp(){createHint(2)};
-function orig(){createHint(3)};
-function food(){createHint(4)};
+function curr(){createHint(2)};
+function food(){createHint(3)};
+function fun(){createHint(4)};
 function lang(){createHint(5)};
 function cap(){createHint(6)};
-function curr(){createHint(7)};
+function fame(){createHint(7)};
 function mark(){createHint(8)};
