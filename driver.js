@@ -69,7 +69,7 @@ function createHint(cnt){
             document.getElementById("lmarkButt").disabled = true;
             break;
     }
-    console.log(clue);
+    openQuestionModal(clue);
 }
 
 function retrieveInput(){
@@ -104,6 +104,14 @@ function openIntroModal() {
     var myModal = new bootstrap.Modal(document.getElementById("introModal"));
     myModal.show();
 }
+
+function openQuestionModal(text){
+    var myModal = new bootstrap.Modal(document.getElementById("modalQuestion"));
+    let hint = document.getElementById("hint")
+    hint.innerHTML = text;
+    myModal.show();
+}
+
 function playAgain(){
     console.log("play again");
 }
