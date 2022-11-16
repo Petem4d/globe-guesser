@@ -11,8 +11,7 @@ function setup(){
 }
 
 function addListeners(){
-    //let btn = document.getElementById("submit");
-    //btn.addEventListener("click", retrieveInput);
+    document.getElementById("countryGuess").addEventListener("click", retrieveInput);
     console.log(country);
     document.getElementById("regionButt").addEventListener("click", reg )
     document.getElementById("popButt").addEventListener("click", pop )
@@ -30,23 +29,22 @@ function main(){
 }
 
 function retrieveInput(){
-    let guess = document.getElementById("userGuess").value;
+    let guess = document.getElementById("floatingInput").value;
     let result = country.Country;
-    let output = document.createElement("text");
     if (guess == result) {
-        openModalWin();
+        openModalWin(result);
     } else {
         count ++;
         createHint(count);
     }
 }
-function openModalWin(){
+function openModalWin(result){
+    // document.getElementById("modalQuestion").aria-hidden = true;
     var myModal = new bootstrap.Modal(document.getElementById("winModal"));
-    let guess = document.getElementById("userGuess").value;
+    let guess = document.getElementById("floatingInput").value;
     let score = document.getElementById("addScore");
     let country = document.getElementById("correctCountry");
-    var correctCountry = toString(country.Country);
-    country.innerHTML = "Correct Country: " + guess;
+    country.innerHTML = "Correct Country: " + result;
     score.innerHTML = calculateScore();
     myModal.show();
     let playAgainBtn = document.getElementById("playAgain");
@@ -63,7 +61,7 @@ function openIntroModal() {
 }
 
 function openQuestionModal(text, question){
-    var myModal = new bootstrap.Modal(document.getElementById("modalQuestion"));
+    let myModal = new bootstrap.Modal(document.getElementById("modalQuestion"));
     let hint = document.getElementById("hint")
     let typeQuestion = document.getElementById("questionTypeLabel");
     typeQuestion.innerHTML = question;

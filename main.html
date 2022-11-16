@@ -120,7 +120,7 @@
     </form>
     -->
     <!-- Modal -->
-    <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="startGame" aria-hidden="true">
+    <div class="modal fade" id="introModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="startGame" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -146,14 +146,14 @@
         </div>
     </div>
 
-    <div class="modal fade" id="winModal" tabindex="-1" aria-labelledby="winModalLabel" aria-hidden="true">
+    <div class="modal fade" id="winModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="winModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="winModalTitleLabel">WE HAVE A WINNER</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body p-5 pt-0">
                 <strong>Congratulations! You guessed the correct country!</strong>
                 <p id = "correctCountry"></p>
                 <p> Here is your final score: </p>
@@ -167,7 +167,7 @@
         </div>
       </div>
 
-      <div class = "modal fade" tabindex = "-1" role = "dialog" id = "modalQuestion" aria-hidden = "true">
+      <div class = "modal fade" data-bs-backdrop="static" tabindex = "-1" role = "dialog" id = "modalQuestion" aria-hidden = "true">
         <div class = "modal-dialog">
             <div class = "modal-content">
                 <div class = "modal-header">
@@ -181,7 +181,10 @@
                             <input type = "answer" class = "form-control rounded-3" id = "floatingInput" placeholder = "Place your answer here">
                             <label for = "floatingInput">What's the Country?</label>
                         </div>
-                        <button type = button id = "countryGuess" class = "w3-btn w3-blue" >Submit</button>
+                        <button type = "button" id = "countryGuess" class = "w3-btn w3-blue" >Submit</button>
+                        <div class = "modal-footer">
+                            <button type = "button" class = "btn-btn-secondary" data-bs-dismiss = "modal">Close</button>
+                        </div>
                     </form>
 
                 </div>
