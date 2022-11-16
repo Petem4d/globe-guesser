@@ -23,6 +23,12 @@ function addListeners(){
     document.getElementById("capitalButt").addEventListener("click", cap )
     document.getElementById("fameButt").addEventListener("click", fame)
     document.getElementById("lmarkButt").addEventListener("click", mark )
+    document.getElementById("floatingInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("countryGuess").click();
+        }
+    })
 }
 
 
@@ -30,6 +36,9 @@ function retrieveInput(){
     let guess = document.getElementById("floatingInput").value;
     let result = country.Country;
     updateScore();
+    if(runs == 1){
+        document.getElementById("wrongAnswersTitle").innerHTML = "Previous Guesses"
+    }
     if (guess == result) {
         let oldHintList = document.getElementById("usedHint");
         let listElement1 = document.createElement('li');
@@ -47,9 +56,6 @@ function retrieveInput(){
         listElement1.innerHTML = currQuest;
         oldHintList.appendChild(listElement1);
 
-        if(runs == 1){
-            document.getElementById("wrongAnswersTitle").innerHTML = "Previous Guesses"
-        }
         let answerList = document.getElementById("wrongAnswers");
         let listElement2 = document.createElement('h5');
         listElement2.style.color = "red";
@@ -62,6 +68,7 @@ function retrieveInput(){
     }
 }
 function openModalWin(result){
+    endgame();
     var myModal = new bootstrap.Modal(document.getElementById("winModal"));
     let score = document.getElementById("addScore");
     let countryName = document.getElementById("correctCountry");
@@ -72,11 +79,12 @@ function openModalWin(result){
 }
 
 function openModalLose(){
+    endgame();
     var myModal = new bootstrap.Modal(document.getElementById("loseModal"));
     let countryP = document.getElementById("correctCountryLose");
     countryP.innerHTML = "The correct country was: " + country.Country;
     myModal.show();
-    let playAgainBtn = document.getElementById("playAgain");
+    let playAgainBtn = document.getElementById("playAgainLose");
     playAgainBtn.addEventListener("click", playAgain);
 }
 
@@ -94,6 +102,7 @@ function openQuestionModal(text, question){
     hint.innerHTML = text;
     myModal.show();
     currQuest = question + ": " + text;
+
 }
 
 function playAgain(){
@@ -105,6 +114,14 @@ function updateScore(){
     document.getElementById("currScore").innerHTML = "Your Current Score: " + (100-count);
 }
 
+function endgame(){
+    let playAgainButt = document.createElement("button");
+    playAgainButt.innerHTML = "Play Again?";
+    playAgainButt.setAttribute("class", "btn btn-secondary")
+    document.getElementById("playAgainHome").appendChild(playAgainButt);
+    playAgainButt.addEventListener("click", playAgain);
+    
+}
 function reg(){
     let clue = "This country is in " + country.Region;
     document.getElementById("regionButt").disabled = true;

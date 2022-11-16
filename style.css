@@ -1,5 +1,7 @@
 h1{
     text-align: center;
+    font-style: italic;
+    font-weight: bold;
 }
 h2{
     text-align: center;
@@ -11,14 +13,16 @@ h5{
     text-align: center;
 }
 
-#wrapper{
-    text-align: center;
-   
+#closeButt{
+    float: right
+}
+#playAgain{
+    float: left;
 }
 #inputForm{
     text-align: center;
 }
-.btn {
+.btn-primary{
     width: 120px;
     text-align: center;
     font-size: 15px;
@@ -29,5 +33,8 @@ h5{
  #usedHintDiv{
     padding-left: 20px;
       
+ }
+ #playAgainHome{
+    text-align: center;
  }
  
