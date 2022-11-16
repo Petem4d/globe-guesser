@@ -1,11 +1,19 @@
 h1{
     text-align: center;
 }
+h2{
+    text-align: center;
+}
 h3{
     text-align: center;
 }
+h5{
+    text-align: center;
+}
+
 #wrapper{
     text-align: center;
+   
 }
 #inputForm{
     text-align: center;
@@ -17,5 +25,9 @@ h3{
     padding: 20px;
     border-radius: 15px;
     height: 120px;
+ }
+ #usedHintDiv{
+    padding-left: 20px;
+      
  }
  

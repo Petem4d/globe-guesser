@@ -18,7 +18,7 @@
     <h1> Country Guesser </h1>
     <br>
     <div class = "row">
-        <div class = "col-md-4">
+        <div class = "col-md-4" id = "usedHintDiv">
             <ul class="list-group list-group-flush" id = "usedHint">
             </ul>
         </div>
@@ -114,20 +114,17 @@
                         </div>
                     </div>
                 </div> 
-            </div>
         </div>
-        <div class = "col-md-4">
+        <div class = "col-md-2">
+            <h3 id = "wrongAnswersTitle"> </h3>
             <ul class="list-group list-group-flush" id = "wrongAnswers">
             </ul>
         </div>
+    </div>
 
-    <!-- OLD INPUT
-    <form id = "inputForm">
-        <input type="text" id="userGuess" value="Guess the Country"> 
-        <input type="button" id = "submit" value="Submit"> 
-    </form>
-    -->
-    <!-- Modal -->
+    <h2 id = "currScore"> </h2>
+
+
     <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="startGame" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -142,9 +139,11 @@
                     <li>Pick a category of hints</li>
                         <ul>
                             <li>Hints are weighted by category (Ex: Landmarks would be worth less points than origin date</li>
+                            <li> Hints in the top row cost 5 points, hints in the second row cost 9 points, and hints in the bottom row cost 18</li>
+                            <li>You start with 100 points, and the total cost of your hints used is subtracted from this score</li>
                         </ul>
                     <li>Guess the country associated with the hints</li>
-                    <li> If you cross a certain amount of points/hints used, you lose!</li>
+                    <li> If you go through all the categories, you lose! Try your best to get the highest score.</li>
                 </ol>
             </div>
             <div class="modal-footer">
@@ -189,7 +188,7 @@
                             <input type = "answer" class = "form-control rounded-3" id = "floatingInput" placeholder = "Place your answer here">
                             <label for = "floatingInput">What's the Country?</label>
                         </div>
-                        <button type = button id = "countryGuess" class = "w3-btn w3-blue" >Submit</button>
+                        <button type = button id = "countryGuess" class = "w3-btn w3-blue" data-bs-dismiss="modal" >Submit</button>
                         <div class = "modal-footer">
                             <button type="button" class="btn-btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
@@ -197,6 +196,24 @@
 
                 </div>
             </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="loseModal" tabindex="-1" aria-labelledby="loseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="winModalTitleLabel"> INCORRECT </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <strong>Unfortunately, you did not guess the country</strong>
+                <p id = "correctCountryLose"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id = "playAgain" class="btn-btn-primary">Play Again?</button>
+            </div>
+          </div>
         </div>
       </div>
 
