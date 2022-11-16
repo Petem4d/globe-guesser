@@ -27,7 +27,7 @@ function addListeners(){
 
 
 function retrieveInput(){
-    let guess = document.getElementById("floatingInput").value;
+    let guess = document.getElementById("floatingSelect").value;
     let result = country.Country;
     updateScore();
     if (guess == result) {
