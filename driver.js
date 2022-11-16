@@ -29,49 +29,6 @@ function main(){
     
 }
 
-function createHint(cnt){
-    var clue;
-    switch (cnt) {
-        case 0:
-            clue = "This country is in " + country.Region;
-            document.getElementById("regionButt").disabled = true;
-            break;
-        case 1:
-            clue = "This country has a population of "+ country.Population + " people";
-            document.getElementById("popButt").disabled = true;
-            break;
-        case 2:
-            clue = "The currency of this country is the " + country.Currency;
-            document.getElementById("currButt").disabled = true;
-            break;  
-        case 3:
-            clue = "This country's national dish is " + country.Food;
-            document.getElementById("foodButt").disabled = true;
-            break;
-        case 4:
-            clue = country.Fun;
-            document.getElementById("funButt").disabled = true;
-            break;
-        case 5:
-            clue = "The official language of this country is " + country.Language;
-            document.getElementById("languageButt").disabled = true;
-            break;
-        case 6:
-            clue = "The capital of this country is  " + country.Capital;
-            document.getElementById("capitalButt").disabled = true;
-            break;        
-        case 7:
-            clue = "A famous person from this country is " + country.Famous;
-            document.getElementById("fameButt").disabled = true;
-            break;       
-        case 8:
-            clue = "One of the most well known landmarks in this country is " + country.Landmark;
-            document.getElementById("lmarkButt").disabled = true;
-            break;
-    }
-    openQuestionModal(clue);
-}
-
 function retrieveInput(){
     let guess = document.getElementById("userGuess").value;
     let result = country.Country;
@@ -105,9 +62,11 @@ function openIntroModal() {
     myModal.show();
 }
 
-function openQuestionModal(text){
+function openQuestionModal(text, question){
     var myModal = new bootstrap.Modal(document.getElementById("modalQuestion"));
     let hint = document.getElementById("hint")
+    let typeQuestion = document.getElementById("questionTypeLabel");
+    typeQuestion.innerHTML = question;
     hint.innerHTML = text;
     myModal.show();
 }
@@ -120,12 +79,66 @@ function calculateScore() {
     return count;
 }
 
-function reg(){createHint(0)};
-function pop(){createHint(1)};
-function curr(){createHint(2)};
-function food(){createHint(3)};
-function fun(){createHint(4)};
-function lang(){createHint(5)};
-function cap(){createHint(6)};
-function fame(){createHint(7)};
-function mark(){createHint(8)};
+function reg(){
+    let clue = "This country is in " + country.Region;
+    document.getElementById("regionButt").disabled = true;
+    let question = "REGION";
+    openQuestionModal(clue, question);
+}
+
+function pop(){
+    let clue = "This country has a population of " + country.Population + " people";
+    document.getElementById("popButt").disabled = true;
+    let question = "POPULATION";
+    openQuestionModal(clue, question);
+}
+
+function fame(){
+    let clue = "A famous person from this country is " + country.Famous;
+    document.getElementById("fameButt").disabled = true;
+    let question = "FAMOUS PERSON";
+    openQuestionModal(clue, question);
+}
+
+function fun(){
+    let clue = country.Fun;
+    document.getElementById("funButt").disabled = true;
+    let question = "FUN FACT";
+    openQuestionModal(clue, question);
+}
+
+function food(){
+    let clue = "This country's national dish is " + country.Food;
+    document.getElementById("foodButt").disabled = true;
+    let question = "NATIONAL DISH";
+    openQuestionModal(clue, question);
+}
+
+function lang(){
+    let clue = "The official language of this country is " + country.Language;
+    document.getElementById("languageButt").disabled = true;
+    let question = "OFFICIAL LANGUAGE";
+    openQuestionModal(clue, question);
+}
+
+
+function cap(){
+    let clue = "The capital of this country is  " + country.Capital;
+    document.getElementById("capitalButt").disabled = true;
+    let question = "CAPITAL";
+    openQuestionModal(clue, question);
+}
+
+function curr(){
+    let clue = "The currency of this country is the " + country.Currency;
+    document.getElementById("currButt").disabled = true;
+    let question = "CURRENCY";
+    openQuestionModal(clue, question);
+}
+
+function mark(){
+    let clue = "One of the most well known landmarks in this country is " + country.Landmark;
+    document.getElementById("lmarkButt").disabled = true;
+    let question = "LANDMARK";
+    openQuestionModal(clue, question);
+}
