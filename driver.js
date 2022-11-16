@@ -3,6 +3,7 @@ import {selectCountry} from "./loadJSON.js";
 window.addEventListener("load", setup); 
 var count = 0;
 var country;
+let win = false;
 function setup(){
     country = selectCountry();
     openIntroModal();
@@ -39,7 +40,7 @@ function retrieveInput(){
     }
 }
 function openModalWin(result){
-    // document.getElementById("modalQuestion").aria-hidden = true;
+    let oldModal = document.getElementById("modalQuestion");
     var myModal = new bootstrap.Modal(document.getElementById("winModal"));
     let guess = document.getElementById("floatingInput").value;
     let score = document.getElementById("addScore");
