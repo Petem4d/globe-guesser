@@ -12,7 +12,6 @@ function setup(){
 
 function addListeners(){
     document.getElementById("countryGuess").addEventListener("click", retrieveInput);
-    console.log(country);
     document.getElementById("regionButt").addEventListener("click", reg )
     document.getElementById("popButt").addEventListener("click", pop )
     document.getElementById("currButt").addEventListener("click", curr)
@@ -34,8 +33,10 @@ function retrieveInput(){
     if (guess == result) {
         openModalWin(result);
     } else {
-        count ++;
-        createHint(count);
+        let answerList = document.getElementById("wrongAnswers");
+        let listElement = document.createElement('li');
+        listElement.innerHTML = guess;
+        answerList.appendChild(listElement);
     }
 }
 function openModalWin(result){
@@ -67,6 +68,10 @@ function openQuestionModal(text, question){
     typeQuestion.innerHTML = question;
     hint.innerHTML = text;
     myModal.show();
+    let oldHintList = document.getElementById("usedHint");
+    let listElement = document.createElement('li');
+    listElement.innerHTML = question + ": " + text;
+    oldHintList.appendChild(listElement);
 }
 
 function playAgain(){
