@@ -24,9 +24,6 @@ function addListeners(){
     document.getElementById("xOut").addEventListener("click", closedModal);
     document.getElementById("closeButtQ").addEventListener("click", closedModal);
 
-    //document.getElementById("lossClose").addEventListener("click", endgame);
-    //document.getElementById("winClose").addEventListener("click", endgame);
-
     document.getElementById("regionButt").addEventListener("click", reg )
     document.getElementById("popButt").addEventListener("click", pop )
     document.getElementById("currButt").addEventListener("click", curr)
@@ -109,7 +106,9 @@ function openModalWin(result){
     myModal.show();
     document.getElementById("playAgain").addEventListener("click", playAgain);
     let average = calculateStats(100-count);
-    document.getElementById("averageScore").innerHTML = "Your average score is: " +  average;
+    document.getElementById("averageScore").innerHTML = "Your average score is: " +  String(average[0]).slice(0,5);
+    document.getElementById("winRate").innerHTML = "Your win rate is: " +  String(average[1]).slice(0,5) + "%";
+
 }
 
 function openModalLose(){
@@ -150,31 +149,31 @@ function updateScore(){
     
 }
 
-function endgame(){
-    let playAgainButt = document.createElement("button");
-    playAgainButt.innerHTML = "Play Again?";
-    playAgainButt.setAttribute("class", "btn btn-success")
-    document.getElementById("playAgainHome").appendChild(playAgainButt);
-    playAgainButt.addEventListener("click", playAgain);
-    
-}
 function calculateStats(score){
     var games;
     var totScore;
+    let returnInfo = [2];
     try{
         games = window.localStorage.getItem('games');
         games = Number(games) + 1;
     }
     catch{
         window.localStorage.setItem('games', 1);
+        window.localStorage.setItem('wins', 0);
         window.localStorage.setItem('score', score);
         return score;
     }
-    
+
+    if(score != 0){
+        window.localStorage.setItem('wins', (Number(window.localStorage.getItem('wins')) + 1 ));
+    }
+
     totScore = Number(window.localStorage.getItem('score')) + Number(score);
     window.localStorage.setItem('score', totScore);
     window.localStorage.setItem('games', games);
-    return totScore/games;
+    returnInfo[0] = totScore/games;
+    returnInfo[1] = (Number(window.localStorage.getItem('wins'))/games)*100;
+    return returnInfo;
 }
 function populateList(){
     var dataList = document.getElementById("countryName")
