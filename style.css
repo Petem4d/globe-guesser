@@ -14,7 +14,9 @@ h5{
 }
 
 #closeButt{
-    float: right
+    position: absolute;
+    bottom: 15px;
+    right: 48px;
 }
 #playAgain{
     float: left;
@@ -36,5 +38,11 @@ h5{
  }
  #playAgainHome{
     text-align: center;
+ }
+
+ #countryGuess{
+    position: absolute;
+    bottom: 15px;
+    left: 48px;
  }
  
