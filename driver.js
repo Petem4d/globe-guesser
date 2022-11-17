@@ -17,7 +17,6 @@ function setup(){
 }
 
 function addListeners(){
-    document.getElementById("instructionsBtn").addEventListener("click", openIntroModal);
     document.getElementById("countryGuess").addEventListener("click", retrieveInput);
     document.getElementById("xOut").addEventListener("click", closedModal);
     document.getElementById("closeButtQ").addEventListener("click", closedModal);
