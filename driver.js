@@ -14,6 +14,9 @@ function setup(){
 
 function addListeners(){
     document.getElementById("countryGuess").addEventListener("click", retrieveInput);
+    document.getElementById("xOut").addEventListener("click", closedModal);
+    document.getElementById("closeButtQ").addEventListener("click", closedModal);
+
     document.getElementById("regionButt").addEventListener("click", reg )
     document.getElementById("popButt").addEventListener("click", pop )
     document.getElementById("currButt").addEventListener("click", curr)
@@ -23,12 +26,14 @@ function addListeners(){
     document.getElementById("capitalButt").addEventListener("click", cap )
     document.getElementById("fameButt").addEventListener("click", fame)
     document.getElementById("lmarkButt").addEventListener("click", mark )
+    /*
     document.getElementById("floatingInput").addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
           event.preventDefault();
           document.getElementById("countryGuess").click();
         }
     })
+    */
 }
 
 
@@ -66,6 +71,20 @@ function retrieveInput(){
             openModalLose();
         }
     }
+}
+function closedModal(){
+    updateScore();
+    if(runs == 1){
+        document.getElementById("wrongAnswersTitle").innerHTML = "Previous Guesses"
+    }
+    let oldHintList = document.getElementById("usedHint");
+    let listElement1 = document.createElement('li');
+    listElement1.innerHTML = currQuest;
+    oldHintList.appendChild(listElement1);
+    if(runs == 9){
+        openModalLose();
+    }
+
 }
 function openModalWin(result){
     endgame();
