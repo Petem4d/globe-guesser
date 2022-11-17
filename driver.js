@@ -148,7 +148,7 @@ function updateScore(){
 function endgame(){
     let playAgainButt = document.createElement("button");
     playAgainButt.innerHTML = "Play Again?";
-    playAgainButt.setAttribute("class", "btn btn-secondary")
+    playAgainButt.setAttribute("class", "btn btn-success")
     document.getElementById("playAgainHome").appendChild(playAgainButt);
     playAgainButt.addEventListener("click", playAgain);
     
@@ -169,8 +169,6 @@ function calculateStats(score){
     totScore = Number(window.localStorage.getItem('score')) + Number(score);
     window.localStorage.setItem('score', totScore);
     window.localStorage.setItem('games', games);
-    console.log(totScore);
-    console.log(games);
     return totScore/games;
 }
 function populateList(){

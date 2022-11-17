@@ -32,7 +32,8 @@ h5{
     padding: 20px;
     border-radius: 15px;
     height: 120px;
-    /*background-color: black !important;*/
+    background-color: #457921 !important;
+    border-color: #457921 !important;
  }
  #usedHintDiv{
     padding-left: 20px;
@@ -47,4 +48,12 @@ h5{
     bottom: 15px;
     left: 48px;
  }
- 
+ .btn-dark{
+    background-color: #2497C6 !important;
+    border-color: #2497C6 !important;
+ }
+ .btn-success{
+    background-color: #4D3232 !important;
+    border-color: #4D3232 !important;
+ }
+
