@@ -59,16 +59,12 @@ h5{
     border-color: #4D3232 !important;
  }
 
- .column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
- }
 
- .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  
+#headButtons{
+    float: right !important;
+    padding-top: 20px;
+    padding-right: 15px;
+}
+a{
+    padding-left: 14px;
+}

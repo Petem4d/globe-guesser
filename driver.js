@@ -17,12 +17,15 @@ function setup(){
 }
 
 function addListeners(){
+    document.getElementById("faqButton").addEventListener("click", openIntroModal);
+    document.getElementById("replayButton").addEventListener("click", playAgain);
+
     document.getElementById("countryGuess").addEventListener("click", retrieveInput);
     document.getElementById("xOut").addEventListener("click", closedModal);
     document.getElementById("closeButtQ").addEventListener("click", closedModal);
 
-    document.getElementById("lossClose").addEventListener("click", endgame);
-    document.getElementById("winClose").addEventListener("click", endgame);
+    //document.getElementById("lossClose").addEventListener("click", endgame);
+    //document.getElementById("winClose").addEventListener("click", endgame);
 
     document.getElementById("regionButt").addEventListener("click", reg )
     document.getElementById("popButt").addEventListener("click", pop )
