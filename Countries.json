@@ -1,7 +1,7 @@
 [
   {
     "Country": "China",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 1313973713,
     "Language": "Mandarin",
     "Food": "Peking Duck",
@@ -13,7 +13,7 @@
   },
   {
     "Country": "India",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 1095351995,
     "Language": "Hindi",
     "Food": "Sabji-roti",
@@ -37,7 +37,7 @@
   },
   {
     "Country": "Indonesia",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 245452739,
     "Language": "Indonesian",
     "Food": "Nasi goreng",
@@ -61,7 +61,7 @@
   },
   {
     "Country": "Pakistan",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 165803560,
     "Language": "Urdu and English",
     "Food": "Nihari",
@@ -73,7 +73,7 @@
   },
   {
     "Country": "Bangladesh",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 147365352,
     "Language": "Bengali",
     "Food": "Hilsa Curry",
@@ -85,7 +85,7 @@
   },
   {
     "Country": "Russia",
-    "Region": "C.W. OF IND. STATES",
+    "Region": "EUROPE",
     "Population": 142893540,
     "Language": "Russian",
     "Food": "Peleni",
@@ -109,7 +109,7 @@
   },
   {
     "Country": "Japan",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 127463611,
     "Language": "Japanese",
     "Food": "Sushi",
@@ -133,7 +133,7 @@
   },
   {
     "Country": "Philippines",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 89468677,
     "Language": "Filipino, English, and Tagalog",
     "Food": "Adobo",
@@ -145,7 +145,7 @@
   },
   {
     "Country": "Vietnam",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 84402966,
     "Language": "Vietnamese",
     "Food": "Pho",
@@ -205,7 +205,7 @@
   },
   {
     "Country": "Iran",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 68688433,
     "Language": "Persian",
     "Food": "Chelow Kebab",
@@ -217,7 +217,7 @@
   },
   {
     "Country": "Thailand",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 64631595,
     "Language": "Thai",
     "Food": "Pad Thai",
@@ -228,7 +228,7 @@
     "Fun": "This country is the home of Sriracha hot sauce"
   },
   {
-    "Country": "Congo, Dem. Rep.",
+    "Country": "Democratic Republic of Congo",
     "Region": "SUB-SAHARAN AFRICA",
     "Population": 62660551,
     "Language": "French, Kituba, Lingala, Swahili, and Tshiluba",
@@ -277,7 +277,7 @@
   },
   {
     "Country": "South Korea",
-    "Region": "ASIA (EX. NEAR EAST)",
+    "Region": "ASIA",
     "Population": 48846823,
     "Language": "Korean",
     "Food": "Kimchi",
@@ -289,7 +289,7 @@
   },
   {
     "Country": "Ukraine",
-    "Region": "C.W. OF IND. STATES",
+    "Region": "EUROPE",
     "Population": 46710816,
     "Language": "Ukrainian",
     "Food": "Borscht",

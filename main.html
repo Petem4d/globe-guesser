@@ -26,11 +26,12 @@
     <br>
     <div class = "row">
         <div class = "col-md-4" id = "usedHintDiv">
+            <h4 id = "usedHintHead"> </h4>
             <ul class="list-group list-group-flush" id = "usedHint">
             </ul>
         </div>
         <div class = "col-md-4">
-            <div id="Wrapper" class = "shadow-sm p-3 mb-5 bg-body rounded">
+            <div id="Wrapper">
                     <div class='row justify-content-md-center'>
                         <div class='col-md-auto'>
                             <button type="button" class="btn btn-primary" id = "regionButt">
@@ -131,9 +132,21 @@
     <div>
         <h2 id = "currScore"> </h2>
     </div>
+    <br>
+    <!--
+    <div class = "row justify-content-center">
+    <div class = "col-md-4">
+        <div class="progress" style = "height:20px">
+            <div class="progress-bar" role="progressbar" aria-label="Score Progress" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" ></div>
+        </div>
+        </div>
+    </div>
+-->
     <div id = "playAgainHome">
 
     </div>
+
+
 
     <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="startGame" aria-hidden="true">
         <div class="modal-dialog">
@@ -170,17 +183,18 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="winModalTitleLabel">WE HAVE A WINNER</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id = "winClose"></button>
             </div>
             <div class="modal-body">
                 <strong>Congratulations! You guessed the correct country!</strong>
                 <p id = "correctCountry"></p>
-                <p> Here is your final score: </p>
                 <p id = "addScore"></p>
+                <p id = "averageScore"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" id = "playAgain" class="btn btn-success">Play Again?</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="button" id = "playAgain" class="btn btn-success">Play Again?</button>
+                </div>
             </div>
           </div>
         </div>
@@ -197,40 +211,12 @@
                     <p id = "hint"></p>
                     <p><strong>What's the Country?</strong></p>
                     <form class = "">
-                        <input type="text" id="floatingSelect" list = "countryName">
+                        <input type="text" id="floatingSelect" class = "form-control rounded-3" list = "countryName">
                             <dataList id = "countryName">
-                                <option value="United States"></option>
-                                <option value="Vietnam"></option>
-                                <option value="China"></option>
-                                <option value="India"></option>
-                                <option value="Indonesia"></option>
-                                <option value="Brazil"></option>
-                                <option value="Pakistan"></option>
-                                <option value="Bangladesh"></option>
-                                <option value="Russia"></option>
-                                <option value="Nigeria"></option>
-                                <option value="Japan"></option>
-                                <option value="Mexico"></option>
-                                <option value="Philippines"></option>
-                                <option value="Germany"></option>
-                                <option value="Egypt"></option>
-                                <option value="Ethiopia"></option>
-                                <option value="Turkey"></option>
-                                <option value="Iran"></option>
-                                <option value="Thailand"></option>
-                                <option value="Congo, Dem. Rep."></option>
-                                <option value="France"></option>
-                                <option value="United Kingdom"></option>
-                                <option value="Italy"></option>
-                                <option value="South Korea"></option>
-                                <option value="Ukraine"></option>
-                                <option value="South Africa"></option>
-                                <option value="Spain"></option>
-                                <option value="Argentina"></option>
-                                <option value="Poland"></option>
+                                
                             </dataList>
                             <div class = "mb-3">
-                                <button type = "button" id = "countryGuess" class = "btn btn-info" data-bs-dismiss="modal" >Submit</button>
+                                <button type = "button" id = "countryGuess" class = "btn btn-dark" data-bs-dismiss="modal" >Submit</button>
                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal" id = "closeButtQ">Close</button>
                             </div>
                         <!--
@@ -249,14 +235,16 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="winModalTitleLabel"> INCORRECT </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id ="lossClose"></button>
             </div>
             <div class="modal-body">
                 <strong>Unfortunately, you did not guess the country</strong>
                 <p id = "correctCountryLose"></p>
             </div>
             <div class="modal-footer">
-              <button type="button" id = "playAgainLose" class="btn btn-danger">Play Again?</button>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="button" id = "playAgainLose" class="btn btn-danger">Play Again?</button>
+                </div>
             </div>
           </div>
         </div>
