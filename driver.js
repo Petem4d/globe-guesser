@@ -112,7 +112,7 @@ function openModalWin(result){
 }
 
 function openModalLose(){
-    document.getElementById("currScore").innerHTML = "Your Current Score: " + 0;
+    document.getElementById("currScore").innerHTML = "Final Score: " + 0;
     var myModal = new bootstrap.Modal(document.getElementById("loseModal"));
     let countryP = document.getElementById("correctCountryLose");
     countryP.innerHTML = "The correct country was: " + country.Country;
@@ -145,7 +145,7 @@ function playAgain(){
 
 
 function updateScore(){
-    document.getElementById("currScore").innerHTML = "Score: " + (100-count);
+    document.getElementById("currScore").innerHTML = "Current Score: " + (100-count);
     
 }
 
