@@ -106,8 +106,8 @@ function openModalWin(result){
     myModal.show();
     document.getElementById("playAgain").addEventListener("click", playAgain);
     let average = calculateStats(100-count);
-    document.getElementById("averageScore").innerHTML = "Your average score is: " +  String(average[0]).slice(0,5);
-    document.getElementById("winRate").innerHTML = "Your win rate is: " +  String(average[1]).slice(0,5) + "%";
+    document.getElementById("averageScore").innerHTML = "Your average score is: " +  String(average[0]).slice(0,6);
+    document.getElementById("winRate").innerHTML = "Your win rate is: " +  String(average[1]).slice(0,6) + "%";
 
 }
 
